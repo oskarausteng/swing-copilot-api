@@ -127,10 +127,12 @@ Analyze these 4 charts top-down and give me the full swing trade assessment.`;
       return res.status(400).json({ error: 'No update image provided' });
     }
 
+    const newsLine = req.body.newsContext ? `\nNEWS ALERT: ${req.body.newsContext} Factor this into your assessment — if a high-impact event is imminent (within 24-48h), flag it clearly and consider whether to stay out or tighten the stop.` : '';
+
     const systemPrompt = `You are an expert swing trader doing a follow-up check on an active setup.
 Be concise. Plain text, no markdown. Focus only on what has changed and whether the original thesis holds.
 If price has hit the entry zone say so clearly. If the setup is invalidated say so clearly.
-End with: NEXT STEP: [one sentence action].
+End with: NEXT STEP: [one sentence action].${newsLine}
 
 SESSION_CONTEXT_START
 [updated compact JSON — same format, reflect any changes]
