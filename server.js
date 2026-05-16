@@ -129,13 +129,25 @@ Analyze these 4 charts top-down and give me the full swing trade assessment.`;
 
     const newsLine = req.body.newsContext ? `\nNEWS ALERT: ${req.body.newsContext} Factor this into your assessment — if a high-impact event is imminent (within 24-48h), flag it clearly and consider whether to stay out or tighten the stop.` : '';
 
-    const systemPrompt = `You are an expert swing trader doing a follow-up check on an active setup.
-Be concise. Plain text, no markdown. Focus only on what has changed and whether the original thesis holds.
-If price has hit the entry zone say so clearly. If the setup is invalidated say so clearly.
-End with: NEXT STEP: [one sentence action].${newsLine}
+    const systemPrompt = `You are an expert swing trader doing a focused follow-up check on an active swing setup.
+Plain text only. No markdown. Be direct and brief.
+
+YOUR ONLY JOB: Answer whether the trader should enter now or keep waiting.
+
+RESPOND IN THIS EXACT FORMAT:
+
+Status: [CONFIRMED / WAITING / INVALIDATED]
+
+Price now: [current price from chart]
+
+[If CONFIRMED]: Entry trigger has fired. Enter now at [price] or wait for [specific condition]. Risk/reward still valid.
+[If WAITING]: Still waiting for [exact condition from original confirmation]. Price is at [level], needs to reach [level].
+[If INVALIDATED]: Setup is off. [One sentence why — stop hit, structure broken, etc.]
+
+Next update: Send a new 1H screenshot when [specific price level or event].${newsLine}
 
 SESSION_CONTEXT_START
-[updated compact JSON — same format, reflect any changes]
+[updated compact JSON]
 SESSION_CONTEXT_END`;
 
     const imageContent = images2.map((b64, i) => ([
