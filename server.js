@@ -121,7 +121,7 @@ Analyze these 4 charts top-down and give me the full swing trade assessment.`;
   }
 
   // ─── UPDATE / FOLLOW-UP ──────────────────────────────────────────────────────
-  if (type === 'update') {
+  if (type === 'update' || type === 'followup') {
     const images2 = [updateImage, updateImage2].filter(Boolean);
     if (!images2.length) {
       return res.status(400).json({ error: 'No update image provided' });
