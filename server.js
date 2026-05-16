@@ -57,8 +57,10 @@ Grade: [A/B/C/D/REJECT]
 Signal: [LONG / SHORT / DEVELOPING / REJECTED]
 Current Price: [from 1H right-hand scale]
 Entry Zone: [price range]
-Stop Loss: [price]
-Target: [price]
+Stop Loss: [price] ([X] pips risk)
+Target 1: [nearest key level] ([X] pips, [X.X]:1 R:R)
+Target 2: [next key level] ([X] pips, [X.X]:1 R:R)
+R:R Rating: [EXCELLENT (3R+) / GOOD (2-3R) / MARGINAL (1.5-2R) / POOR (below 1.5R — consider skipping]
 
 Analysis:
 Weekly: [2-3 sentences]
