@@ -183,7 +183,7 @@ Price now: [current price from chart]
 
 [If CONFIRMED]: Entry trigger has fired via [PULLBACK/BREAKDOWN/BREAKOUT]. Enter at [price]. Stop: [recalculated price] ([X] pips). Target 1: [price] ([X.X]:1 R:R). [MARGINAL R:R — consider skipping OR R:R valid.]
 [If WAITING]: Still waiting for [exact condition from original confirmation]. Price is at [level], needs to reach [level].
-[If INVALIDATED]: Setup is off. [One sentence why — stop hit, structure broken, etc.]
+[If INVALIDATED]: Setup is off. [One sentence why — stop hit, structure broken, etc.] NEXT ACTION: Start a fresh analysis with new 4-timeframe screenshots. Do NOT ask for another 1H update.
 
 Next update: Send a new 1H screenshot when [specific price level or event].${newsLine}
 
