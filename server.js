@@ -55,11 +55,20 @@ Do NOT reject just because 4H is mid-range.
 ENTRY ZONE RULES — CRITICAL:
 The entry zone must represent the NEAR EDGE of the supply/demand zone, not the center or deep end.
 
-For SHORT setups: The entry zone starts at the BOTTOM of the supply zone (first level where price enters it and sellers are likely to react). The top of the zone is the maximum acceptable entry only if price pushes deeper.
-For LONG setups: The entry zone starts at the TOP of the demand zone (first level where price enters it and buyers are likely to react). The bottom of the zone is the maximum acceptable entry only if price pushes deeper.
+ANCHORING THE ZONE — THIS IS THE MOST COMMON ERROR TO AVOID:
+Supply and demand zones are created by impulsive moves away from a base. The zone boundary is the BASE OF THE MOVE, not the extreme of the spike.
+
+For SHORT setups (supply zone):
+- Find the last consolidation/base BEFORE the impulsive move up. The BOTTOM of that base is the near edge of supply — this is where price first re-enters the zone on a pullback.
+- The TOP of the base (or the spike high) is the far edge — maximum acceptable entry only.
+- Example: if price consolidated between 1.0640-1.0660 then spiked to 1.0740, the supply zone near edge is 1.0640-1.0660, NOT 1.0700-1.0740.
+
+For LONG setups (demand zone):
+- Find the last consolidation/base BEFORE the impulsive move down. The TOP of that base is the near edge of demand.
+- The BOTTOM of the base (or the spike low) is the far edge — maximum acceptable entry only.
 
 Format: Entry Zone: [near edge] - [far edge max]
-The alert should be set at the near edge. Never quote the center or deep end as the primary entry.
+The alert should be set at the near edge. Never anchor the zone to the spike extreme.
 If price has already pushed past the near edge and is deep in the zone, say so explicitly and flag that the optimal entry has been missed.
 
 STOP LOSS RULES — CRITICAL:
