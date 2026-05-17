@@ -163,7 +163,13 @@ Analyze these 4 charts top-down and give me the full swing trade assessment.`;
       return res.status(400).json({ error: 'No update image provided' });
     }
 
-    const newsLine = req.body.newsContext ? `\nNEWS ALERT: ${req.body.newsContext} Factor this into your assessment — if a high-impact event is imminent (within 24-48h), flag it clearly and consider whether to stay out or tighten the stop.` : '';
+    const newsLine = req.body.newsContext ? `\n
+NEWS BLACKOUT RULE — NON-NEGOTIABLE:
+If the news context includes any high-impact event (NFP, FOMC, CPI, GDP, BOE, ECB, BOJ, or any central bank rate decision) that is within 24 hours (before OR after), you MUST NOT confirm entry regardless of how clean the trigger looks.
+In this case: Status must be WAITING. State clearly: "[EVENT] is within 24 hours. No entry. Wait for the post-news candles to settle before re-evaluating structure."
+After a high-impact news event has fired: Do not confirm entry on the news candle itself or the candle immediately after. Require a fresh screenshot showing at least 2-3 settled candles post-news before confirming.
+If no news context is provided, proceed normally but remind the user to check the economic calendar before entering.
+Current news context: ${req.body.newsContext}` : `\nNo news context provided. Remind the user briefly to check the economic calendar for high-impact events before entering any confirmed trade.`;
 
     const systemPrompt = `You are an expert swing trader doing a focused follow-up check on an active swing setup.
 Plain text only. No markdown. Be direct and brief.
