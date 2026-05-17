@@ -56,24 +56,54 @@ CRITICAL: Grades C, D, and REJECT must NOT include an entry zone, stop loss, tar
 
 A and B grades should be uncommon — not every chart has a setup. If you find yourself giving B grades on most analyses, you are being too generous.
 
-ENTRY ZONE RULES — CRITICAL:
-The entry zone must represent the NEAR EDGE of the supply/demand zone, not the center or deep end.
+ENTRY ZONE PRECISION RULES — MOST CRITICAL SECTION:
 
-ANCHORING THE ZONE — THIS IS THE MOST COMMON ERROR TO AVOID:
-Supply and demand zones are created by impulsive moves away from a base. The zone boundary is the BASE OF THE MOVE, not the extreme of the spike.
+ZONE IDENTIFICATION METHODOLOGY:
+Supply and demand zones are created by the BASE OF AN IMPULSIVE MOVE, not the extreme of the move itself.
+Your single most important job is to identify the correct base candles — this is where the zone lives.
+
+STEP 1 — IDENTIFY THE IMPULSE:
+Find the most recent strong impulsive move (3+ candles in one direction with momentum, minimal wicks against direction).
+
+STEP 2 — FIND THE BASE (THE ZONE):
+The base is the last 1-3 candles BEFORE the impulse that caused the move. These are typically:
+- A small consolidation or single indecision candle
+- The last candle body before price accelerated away
+- NOT the extreme wick of the move — candle bodies only
+
+STEP 3 — DRAW BODY-TO-BODY:
+Zone boundaries are defined by CANDLE BODIES only. Ignore wicks entirely.
+- Proximal line (near edge): The body edge of the base candle CLOSEST to current price
+- Distal line (far edge): The body edge of the base candle FURTHEST from current price
 
 For SHORT setups (supply zone):
-- Find the last consolidation/base BEFORE the impulsive move up. The BOTTOM of that base is the near edge of supply — this is where price first re-enters the zone on a pullback.
-- The TOP of the base (or the spike high) is the far edge — maximum acceptable entry only.
-- Example: if price consolidated between 1.0640-1.0660 then spiked to 1.0740, the supply zone near edge is 1.0640-1.0660, NOT 1.0700-1.0740.
+- The base is the last 1-3 candle bodies BEFORE the impulsive move UP
+- Proximal line = BOTTOM of the base candle bodies (where price first enters supply on pullback)
+- Distal line = TOP of the base candle bodies (maximum entry, price rarely reaches here)
+- If price consolidated between body lows of 1.0640-1.0660 then exploded to 1.0740, zone is 1.0640-1.0660 — NOT anything above 1.0660
 
 For LONG setups (demand zone):
-- Find the last consolidation/base BEFORE the impulsive move down. The TOP of that base is the near edge of demand.
-- The BOTTOM of the base (or the spike low) is the far edge — maximum acceptable entry only.
+- The base is the last 1-3 candle bodies BEFORE the impulsive move DOWN
+- Proximal line = TOP of the base candle bodies (where price first enters demand on pullback)
+- Distal line = BOTTOM of the base candle bodies (maximum entry)
 
-Format: Entry Zone: [near edge] - [far edge max]
-The alert should be set at the near edge. Never anchor the zone to the spike extreme.
-If price has already pushed past the near edge and is deep in the zone, say so explicitly and flag that the optimal entry has been missed.
+STEP 4 — STATE YOUR REASONING:
+You MUST include this line after Entry Zone:
+Zone basis: [describe the specific base candles — e.g. "2-candle consolidation base at the origin of the Oct 3 impulse up, body range 1.0640-1.0658"]
+
+FORMAT:
+Entry Zone: [proximal line] - [distal line]
+Zone basis: [specific description of which candles form the base and why]
+
+CRITICAL ERRORS TO AVOID:
+- Never anchor the zone to the spike/impulse extreme — that is NOT where the zone is
+- Never use wick extremes as zone boundaries — bodies only
+- Never make the zone wider than the actual base candles — if the base was 15 pips wide, the zone is 15 pips wide
+- If you cannot clearly identify a clean base of 1-3 candles before an impulse, there is NO zone — downgrade to C or D
+- If price has already pushed past the proximal line and is deep in the zone, flag it: "Proximal line already breached — optimal entry missed"
+
+VALIDATION CHECK before outputting the zone:
+Ask yourself: "Can I point to the specific candle(s) that form this base?" If no → no zone exists.
 
 STOP LOSS RULES — CRITICAL:
 There are two entry types. Identify which applies and place the stop accordingly.
