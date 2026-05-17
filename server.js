@@ -52,6 +52,20 @@ GRADING:
 
 Do NOT reject just because 4H is mid-range.
 
+STOP LOSS RULES — CRITICAL:
+There are two entry types. Identify which applies and place the stop accordingly.
+
+PULLBACK entry (price retraces into a zone and shows rejection):
+- Stop goes 10-15 pips beyond the swing low/high that forms on the rejection candle.
+- This is typically a wider stop. Wide stop is acceptable if R:R to Target 1 is 1.5:1+.
+
+BREAKDOWN/BREAKOUT entry (price closes through a level with momentum):
+- Stop goes 15-20 pips beyond the broken level — NOT back at the original pullback zone.
+- Example: if breakdown entry fires at 1.0620 break, stop goes at 1.0645-1.0650, not at 1.0780.
+- Recalculate R:R using this tighter stop. If R:R to Target 1 is still below 1.5:1 after recalculation, rate it MARGINAL and flag it clearly. Do NOT auto-invalidate — let the trader decide.
+
+Always state which entry type applies and why the stop is placed where it is.
+
 OUTPUT FORMAT (plain text, no markdown):
 Grade: [A/B/C/D/REJECT]
 Signal: [LONG / SHORT / DEVELOPING / REJECTED]
@@ -61,6 +75,7 @@ Stop Loss: [price] ([X] pips risk)
 Target 1: [nearest key level] ([X] pips, [X.X]:1 R:R)
 Target 2: [next key level] ([X] pips, [X.X]:1 R:R)
 R:R Rating: [EXCELLENT (3R+) / GOOD (2-3R) / MARGINAL (1.5-2R) / POOR (below 1.5R — consider skipping]
+Entry Type: [PULLBACK / BREAKDOWN / BREAKOUT]
 
 Analysis:
 Weekly: [2-3 sentences]
@@ -136,13 +151,18 @@ Plain text only. No markdown. Be direct and brief.
 
 YOUR ONLY JOB: Answer whether the trader should enter now or keep waiting.
 
+STOP RECALCULATION ON CONFIRMATION — CRITICAL:
+When status is CONFIRMED, identify HOW the trigger fired:
+- If it fired via PULLBACK (price retraced to zone and showed rejection): keep original stop.
+- If it fired via BREAKDOWN/BREAKOUT (price closed through a level with momentum): recalculate stop to 15-20 pips beyond the broken level. State the new stop clearly. Recalculate R:R. If R:R to Target 1 is below 1.5:1 even with the tighter stop, flag as MARGINAL R:R and let the trader decide — do not invalidate.
+
 RESPOND IN THIS EXACT FORMAT:
 
 Status: [CONFIRMED / WAITING / INVALIDATED]
 
 Price now: [current price from chart]
 
-[If CONFIRMED]: Entry trigger has fired. Enter now at [price] or wait for [specific condition]. Risk/reward still valid.
+[If CONFIRMED]: Entry trigger has fired via [PULLBACK/BREAKDOWN/BREAKOUT]. Enter at [price]. Stop: [recalculated price] ([X] pips). Target 1: [price] ([X.X]:1 R:R). [MARGINAL R:R — consider skipping OR R:R valid.]
 [If WAITING]: Still waiting for [exact condition from original confirmation]. Price is at [level], needs to reach [level].
 [If INVALIDATED]: Setup is off. [One sentence why — stop hit, structure broken, etc.]
 
