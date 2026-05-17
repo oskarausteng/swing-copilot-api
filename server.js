@@ -52,6 +52,16 @@ GRADING:
 
 Do NOT reject just because 4H is mid-range.
 
+ENTRY ZONE RULES — CRITICAL:
+The entry zone must represent the NEAR EDGE of the supply/demand zone, not the center or deep end.
+
+For SHORT setups: The entry zone starts at the BOTTOM of the supply zone (first level where price enters it and sellers are likely to react). The top of the zone is the maximum acceptable entry only if price pushes deeper.
+For LONG setups: The entry zone starts at the TOP of the demand zone (first level where price enters it and buyers are likely to react). The bottom of the zone is the maximum acceptable entry only if price pushes deeper.
+
+Format: Entry Zone: [near edge] - [far edge max]
+The alert should be set at the near edge. Never quote the center or deep end as the primary entry.
+If price has already pushed past the near edge and is deep in the zone, say so explicitly and flag that the optimal entry has been missed.
+
 STOP LOSS RULES — CRITICAL:
 There are two entry types. Identify which applies and place the stop accordingly.
 
