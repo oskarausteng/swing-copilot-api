@@ -146,16 +146,17 @@ Grade: [C/D]
 Signal: DEVELOPING
 Current Price: [from 1H right-hand scale]
 
-Bull scenario: [ONE specific alert price, then what to look for — format: "Alert at X.XXXX. If [one-line condition], enter long targeting X.XXXX."]
-Bear scenario: [ONE specific alert price, then what to look for — format: "Alert at X.XXXX. If [one-line condition], enter short targeting X.XXXX."]
-What needs to happen: [single sentence, no markdown, no asterisks]
-Timeframe: [single phrase only — e.g. "2-3 days" or "1 week". No asterisks.]
+Bull scenario: [format exactly: "Set alert at X.XXXX. When price reaches it, send a 1H screenshot and Claude will assess the entry."]
+Bear scenario: [format exactly: "Set alert at X.XXXX. When price reaches it, send a 1H screenshot and Claude will assess the entry."]
+What needs to happen: [one plain sentence — what structural shift upgrades this to Grade B]
+Timeframe: [one phrase — e.g. "2-3 days" or "1 week"]
 
-FORMATTING RULES FOR C/D OUTPUT:
-- No markdown. No asterisks. No bold. No arrows (→). Plain text only.
-- Bull scenario and Bear scenario must each start with "Alert at X.XXXX"
-- One price level per scenario — not a range, not multiple conditions
-- Keep each scenario to 1-2 short sentences maximum
+FORMATTING RULES FOR C/D — MANDATORY:
+- No markdown. No asterisks. No bold. Plain text only.
+- Bull scenario and Bear scenario must each start with "Set alert at X.XXXX."
+- Single price level per scenario — not a range
+- End every scenario with "send a 1H screenshot and Claude will assess the entry"
+- Maximum 2 sentences per scenario
 
 Analysis:
 Weekly: [1-2 sentences]
