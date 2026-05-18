@@ -258,7 +258,13 @@ Status: [CONFIRMED / WATCHING / UPGRADED / INVALIDATED]
 
 Price now: [current price from chart]
 
-[If CONFIRMED — was A/B grade]: Entry trigger has fired via [PULLBACK/BREAKDOWN/BREAKOUT]. Enter at [price]. Stop: [recalculated price] ([X] pips). Target 1: [price] ([X.X]:1 R:R). [MARGINAL R:R — consider skipping OR R:R valid.]
+[If CONFIRMED — was A/B grade]:
+Entry trigger has fired via [PULLBACK/BREAKDOWN/BREAKOUT]. [One sentence describing what happened on the chart.]
+Enter at: [price]
+Stop: [price] ([X] pips)
+Target 1: [price] ([X] pips, [X.X]:1 R:R)
+Target 2: [price] ([X] pips, [X.X]:1 R:R)
+[If R:R to Target 1 is below 1.5:1, add on its own line:] Alternative: Wait for price to reach [better price] for entry — gives Stop [X] pips, Target 1 [X] pips, R:R [X.X]:1.
 
 [If WATCHING — was C/D grade, watch levels not yet reached]: Price is at [level]. Still waiting for [bull or bear scenario level] to be reached. Nothing has changed.
 
