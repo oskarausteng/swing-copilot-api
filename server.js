@@ -139,7 +139,7 @@ Daily: [2-3 sentences]
 4H: [2-3 sentences]
 1H: [2-3 sentences]
 
-Confirmation needed: [exact trigger]
+Confirmation needed: [exact trigger — end with: "When this happens, send a 1H screenshot and Claude will confirm entry."]
 
 ═══ FOR GRADE C OR D (nothing actionable yet) ═══
 Grade: [C/D]
