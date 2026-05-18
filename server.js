@@ -247,15 +247,19 @@ When status is CONFIRMED, identify HOW the trigger fired:
 
 RESPOND IN THIS EXACT FORMAT:
 
-Status: [CONFIRMED / WAITING / INVALIDATED]
+Status: [CONFIRMED / WATCHING / UPGRADED / INVALIDATED]
 
 Price now: [current price from chart]
 
-[If CONFIRMED]: Entry trigger has fired via [PULLBACK/BREAKDOWN/BREAKOUT]. Enter at [price]. Stop: [recalculated price] ([X] pips). Target 1: [price] ([X.X]:1 R:R). [MARGINAL R:R — consider skipping OR R:R valid.]
-[If WAITING]: Still waiting for [exact condition from original confirmation]. Price is at [level], needs to reach [level].
-[If INVALIDATED]: Setup is off. [One sentence why — stop hit, structure broken, etc.] NEXT ACTION: Start a fresh analysis with new 4-timeframe screenshots. Do NOT ask for another 1H update.
+[If CONFIRMED — was A/B grade]: Entry trigger has fired via [PULLBACK/BREAKDOWN/BREAKOUT]. Enter at [price]. Stop: [recalculated price] ([X] pips). Target 1: [price] ([X.X]:1 R:R). [MARGINAL R:R — consider skipping OR R:R valid.]
 
-Next update: Send a new 1H screenshot when [specific price level or event].${newsLine}
+[If WATCHING — was C/D grade, watch levels not yet reached]: Price is at [level]. Still waiting for [bull or bear scenario level] to be reached. Nothing has changed.
+
+[If UPGRADED — was C/D grade, now a real setup forming]: Setup has upgraded. [Describe what changed — e.g. "Price has pulled back to the 1.0760 demand zone and is showing a bullish candle."] New grade: B. Entry zone: [price]. Stop: [price]. Confirmation needed: [trigger].
+
+[If INVALIDATED]: Setup is off. [One sentence why.] NEXT ACTION: Start a fresh analysis with new 4-timeframe screenshots.
+
+Next update: Send a new 1H screenshot when [specific price level or event — be exact].${newsLine}
 
 SESSION_CONTEXT_START
 [updated compact JSON]
