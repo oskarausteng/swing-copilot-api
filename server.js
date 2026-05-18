@@ -119,15 +119,18 @@ BREAKDOWN/BREAKOUT entry (price closes through a level with momentum):
 
 Always state which entry type applies and why the stop is placed where it is.
 
-OUTPUT FORMAT (plain text, no markdown):
-Grade: [A/B/C/D/REJECT]
-Signal: [LONG / SHORT / DEVELOPING / REJECTED]
+OUTPUT FORMAT — CHOOSE BASED ON GRADE:
+
+═══ FOR GRADE A OR B (actionable setup) ═══
+Grade: [A/B]
+Signal: [LONG / SHORT]
 Current Price: [from 1H right-hand scale]
-Entry Zone: [price range]
+Entry Zone: [proximal line] - [distal line]
+Zone basis: [which candles form the base and why]
 Stop Loss: [price] ([X] pips risk)
 Target 1: [nearest key level] ([X] pips, [X.X]:1 R:R)
 Target 2: [next key level] ([X] pips, [X.X]:1 R:R)
-R:R Rating: [EXCELLENT (3R+) / GOOD (2-3R) / MARGINAL (1.5-2R) / POOR (below 1.5R — consider skipping]
+R:R Rating: [EXCELLENT (3R+) / GOOD (2-3R) / MARGINAL (1.5-2R) / POOR (below 1.5R — consider skipping)]
 Entry Type: [PULLBACK / BREAKDOWN / BREAKOUT]
 
 Analysis:
@@ -136,7 +139,34 @@ Daily: [2-3 sentences]
 4H: [2-3 sentences]
 1H: [2-3 sentences]
 
-Confirmation needed: [what to look for, or "none — enter at market"]
+Confirmation needed: [exact trigger]
+
+═══ FOR GRADE C OR D (nothing actionable yet) ═══
+Grade: [C/D]
+Signal: DEVELOPING
+Current Price: [from 1H right-hand scale]
+
+Bull scenario: [exact price level + what to look for — e.g. "Pullback to 1.0760-1.0780 holds as support with bullish candle → long entry"]
+Bear scenario: [exact price level + what to look for — e.g. "Rally to 1.0850-1.0900, form a base, show rejection candle → short entry"]
+What needs to happen: [single sentence — the one thing that would make this Grade B]
+Timeframe: [e.g. "24-48 hours" or "3-5 days" or "1-2 weeks"]
+
+Analysis:
+Weekly: [1-2 sentences]
+Daily: [1-2 sentences]
+4H: [1-2 sentences]
+1H: [1-2 sentences]
+
+═══ FOR GRADE REJECT ═══
+Grade: REJECT
+Signal: REJECTED
+Current Price: [from 1H right-hand scale]
+Why rejected: [1-2 sentences]
+
+CRITICAL RULES:
+- For C/D: Bull scenario, Bear scenario, What needs to happen, and Timeframe are MANDATORY. Output all four every time.
+- For C/D: Do NOT include entry zone, stop loss, or targets.
+- For A/B: Do NOT include Bull scenario or Bear scenario lines.
 
 SESSION_CONTEXT_START
 [compact JSON summary of key levels, bias, and setup for follow-up use]
