@@ -146,10 +146,16 @@ Grade: [C/D]
 Signal: DEVELOPING
 Current Price: [from 1H right-hand scale]
 
-Bull scenario: [exact price level + what to look for — e.g. "Pullback to 1.0760-1.0780 holds as support with bullish candle → long entry"]
-Bear scenario: [exact price level + what to look for — e.g. "Rally to 1.0850-1.0900, form a base, show rejection candle → short entry"]
-What needs to happen: [single sentence — the one thing that would make this Grade B]
-Timeframe: [e.g. "24-48 hours" or "3-5 days" or "1-2 weeks"]
+Bull scenario: [ONE specific alert price, then what to look for — format: "Alert at X.XXXX. If [one-line condition], enter long targeting X.XXXX."]
+Bear scenario: [ONE specific alert price, then what to look for — format: "Alert at X.XXXX. If [one-line condition], enter short targeting X.XXXX."]
+What needs to happen: [single sentence, no markdown, no asterisks]
+Timeframe: [single phrase only — e.g. "2-3 days" or "1 week". No asterisks.]
+
+FORMATTING RULES FOR C/D OUTPUT:
+- No markdown. No asterisks. No bold. No arrows (→). Plain text only.
+- Bull scenario and Bear scenario must each start with "Alert at X.XXXX"
+- One price level per scenario — not a range, not multiple conditions
+- Keep each scenario to 1-2 short sentences maximum
 
 Analysis:
 Weekly: [1-2 sentences]
