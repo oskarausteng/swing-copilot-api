@@ -177,7 +177,7 @@ Daily: [2-3 sentences]
 4H: [2-3 sentences]
 1H: [2-3 sentences]
 
-Confirmation needed: [exact trigger — what candle/pattern to look for. End with: "When this happens, send a 1H screenshot and Claude will set the exact stop and targets based on the confirmation candle."]
+Confirmation needed: [exact trigger — what candle/pattern to look for. End with: "When this happens, send a 1H screenshot and Claude will set the exact stop and targets based on the confirmation candle. If price runs past the zone without tapping it, start a new analysis instead."]
 
 ═══ FOR GRADE C OR D (nothing actionable yet) ═══
 Grade: [C/D]
