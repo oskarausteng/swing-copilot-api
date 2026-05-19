@@ -193,6 +193,12 @@ CRITICAL RULES:
 - For C/D: Do NOT include entry zone, stop loss, or targets.
 - For A/B: Do NOT include Bull scenario or Bear scenario lines.
 
+NEWS WARNING — include this at the very end of every response, after all analysis:
+
+---
+⚠ News reminder: Always check forexfactory.com before acting on this signal. Do not open trades within 30 minutes of red folder news. On active trades, move to breakeven before high-impact events. Close if slippage is a concern.
+---
+
 SESSION_CONTEXT_START
 [compact JSON summary of key levels, bias, and setup for follow-up use]
 SESSION_CONTEXT_END`;
@@ -291,6 +297,12 @@ Target 2: [price] ([X] pips, [X.X]:1 R:R)
 [If INVALIDATED]: Setup is off. [One sentence why.] NEXT ACTION: Start a fresh analysis with new 4-timeframe screenshots.
 
 Next update: Send a new 1H screenshot when [specific price level or event — be exact].${newsLine}
+
+NEWS WARNING — include this at the very end of every response:
+
+---
+⚠ News reminder: Always check forexfactory.com before acting on this signal. Do not open trades within 30 minutes of red folder news. On active trades, move to breakeven before high-impact events. Close if slippage is a concern.
+---
 
 SESSION_CONTEXT_START
 [updated compact JSON]
