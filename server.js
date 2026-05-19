@@ -138,16 +138,16 @@ ALWAYS state entry type (IMBALANCE or PROXIMAL LINE), stop rationale, and target
 
 OUTPUT FORMAT — CHOOSE BASED ON GRADE:
 
-═══ FOR GRADE A OR B (actionable setup) ═══
-Grade: [A/B]
+═══ FOR GRADE A (enter now — no confirmation needed) ═══
+Grade: A
 Signal: [LONG / SHORT]
 Current Price: [from 1H right-hand scale]
 Entry Zone: [proximal line] - [distal line]
 Zone basis: [which candles form the base and why]
 Entry trigger: [IMBALANCE at X.XXXX / PROXIMAL LINE at X.XXXX — explain which and why]
-Stop Loss: [price] ([X] pips risk — [X-15 pips] beyond distal line of zone at X.XXXX)
-Target 1: [price] ([X] pips, [X.X]:1 R:R — [why: equal lows from date / swing high from date / unmitigated OB])
-Target 2: [price] ([X] pips, [X.X]:1 R:R — [why: next liquidity pool / equal highs from date])
+Stop Loss: [price] ([X] pips risk — 15 pips beyond distal line of zone at X.XXXX)
+Target 1: [price] ([X] pips, [X.X]:1 R:R — [why: equal lows/highs, swing point, unmitigated OB])
+Target 2: [price] ([X] pips, [X.X]:1 R:R — [why: next liquidity pool])
 R:R Rating: [EXCELLENT (3R+) / GOOD (2-3R) / MARGINAL (1.5-2R) / POOR (below 1.5R — consider skipping)]
 Entry Type: [PULLBACK / BREAKDOWN / BREAKOUT]
 
@@ -157,7 +157,27 @@ Daily: [2-3 sentences]
 4H: [2-3 sentences]
 1H: [2-3 sentences]
 
-Confirmation needed: [exact trigger — end with: "When this happens, send a 1H screenshot and Claude will confirm entry."]
+Confirmation needed: none — enter at market
+
+═══ FOR GRADE B (waiting for confirmation) ═══
+Grade: B
+Signal: [LONG / SHORT]
+Current Price: [from 1H right-hand scale]
+Entry Zone: [proximal line] - [distal line]
+Zone basis: [which candles form the base and why]
+Entry trigger: [IMBALANCE at X.XXXX / PROXIMAL LINE at X.XXXX — explain which and why]
+Stop Loss: Set on confirmation
+Targets: Set on confirmation
+R:R Rating: [estimated based on zone — EXCELLENT/GOOD/MARGINAL/POOR]
+Entry Type: [PULLBACK / BREAKDOWN / BREAKOUT]
+
+Analysis:
+Weekly: [2-3 sentences]
+Daily: [2-3 sentences]
+4H: [2-3 sentences]
+1H: [2-3 sentences]
+
+Confirmation needed: [exact trigger — what candle/pattern to look for. End with: "When this happens, send a 1H screenshot and Claude will set the exact stop and targets based on the confirmation candle."]
 
 ═══ FOR GRADE C OR D (nothing actionable yet) ═══
 Grade: [C/D]
@@ -283,12 +303,12 @@ Status: [CONFIRMED / WATCHING / UPGRADED / INVALIDATED]
 Price now: [current price from chart]
 
 [If CONFIRMED — was A/B grade]:
-Entry trigger has fired via [PULLBACK/BREAKDOWN/BREAKOUT]. [One sentence describing what happened on the chart.]
-Enter at: [price]
-Stop: [price] ([X] pips)
-Target 1: [price] ([X] pips, [X.X]:1 R:R)
-Target 2: [price] ([X] pips, [X.X]:1 R:R)
-[If R:R to Target 1 is below 1.5:1, add on its own line:] Alternative: Wait for price to reach [better price] for entry — gives Stop [X] pips, Target 1 [X] pips, R:R [X.X]:1.
+Entry trigger has fired via [PULLBACK/BREAKDOWN/BREAKOUT]. [One sentence describing what the confirmation candle looked like.]
+Enter at: [exact entry price based on confirmation candle]
+Stop: [price] ([X] pips — 15 pips beyond distal line of zone / broken level)
+Target 1: [price] ([X] pips, [X.X]:1 R:R — [liquidity reason])
+Target 2: [price] ([X] pips, [X.X]:1 R:R — [liquidity reason])
+[If R:R to Target 1 is below 1.5:1:] Alternative: Wait for price to reach [better price] — gives Stop [X] pips, R:R [X.X]:1.
 
 [If WATCHING — was C/D grade, watch levels not yet reached]: Price is at [level]. Still waiting for [bull or bear scenario level] to be reached. Nothing has changed.
 
