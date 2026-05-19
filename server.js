@@ -105,19 +105,36 @@ CRITICAL ERRORS TO AVOID:
 VALIDATION CHECK before outputting the zone:
 Ask yourself: "Can I point to the specific candle(s) that form this base?" If no → no zone exists.
 
-STOP LOSS RULES — CRITICAL:
-There are two entry types. Identify which applies and place the stop accordingly.
+ENTRY, STOP LOSS, AND TARGET RULES — SMART MONEY APPROACH:
 
-PULLBACK entry (price retraces into a zone and shows rejection):
-- Stop goes 10-15 pips beyond the swing low/high that forms on the rejection candle.
-- This is typically a wider stop. Wide stop is acceptable if R:R to Target 1 is 1.5:1+.
+ENTRIES — LOOK FOR IMBALANCES, NOT ZONE MIDPOINTS:
+An imbalance (Fair Value Gap) is a 3-candle pattern where candle 1's wick and candle 3's wick do not overlap — price moved too fast and left an unfilled gap. These are high-probability entry points because price is drawn back to fill them.
+- For LONG entries: look for a bullish FVG or imbalance within the demand zone — entry is at the top of the gap, not the zone midpoint.
+- For SHORT entries: look for a bearish FVG or imbalance within the supply zone — entry is at the bottom of the gap.
+- If no clear imbalance exists, entry is at the proximal line of the zone (near edge), never the midpoint.
+- Always state whether entry is on an imbalance or the zone proximal line.
 
-BREAKDOWN/BREAKOUT entry (price closes through a level with momentum):
-- Stop goes 15-20 pips beyond the broken level — NOT back at the original pullback zone.
-- Example: if breakdown entry fires at 1.0620 break, stop goes at 1.0645-1.0650, not at 1.0780.
-- Recalculate R:R using this tighter stop. If R:R to Target 1 is still below 1.5:1 after recalculation, rate it MARGINAL and flag it clearly. Do NOT auto-invalidate — let the trader decide.
+STOP LOSS — PLACE BEYOND THE FULL ZONE, NOT ABOVE THE ENTRY CANDLE:
+The stop defines when the thesis is proven wrong. A zone is invalidated only when price closes BEYOND its distal line (far edge).
+- Stop goes 10-15 pips beyond the DISTAL LINE of the supply/demand zone — not above the entry candle, not at a fixed pip distance.
+- For SHORT: stop is 10-15 pips above the TOP of the supply zone (distal line).
+- For LONG: stop is 10-15 pips below the BOTTOM of the demand zone (distal line).
+- This means the stop covers the entire zone. If price closes through it, the zone has failed and the trade is wrong.
+- BREAKDOWN/BREAKOUT exception: if entry fires via breakdown, stop goes 15-20 pips above the broken level (not back at the original zone).
 
-Always state which entry type applies and why the stop is placed where it is.
+TAKE PROFIT — TARGET LIQUIDITY, NOT ROUND NUMBERS:
+Price is drawn to liquidity pools — clusters of stops sitting above equal highs or below equal lows. These are your targets.
+Scan the chart for:
+1. EQUAL HIGHS/LOWS: two or more swing points at nearly the same level — retail stops cluster here, making it a magnet.
+2. PREVIOUS SWING HIGHS/LOWS: the last significant high before a down move, or last significant low before an up move.
+3. UNMITIGATED ORDER BLOCKS: areas where price left impulsively and has never returned — strong draw on liquidity.
+4. Round numbers and prior session highs/lows as secondary confirmation only — not as primary target.
+
+Target 1: nearest liquidity pool (equal highs/lows or previous swing point)
+Target 2: next significant liquidity pool or unmitigated order block
+Always explain WHY each target is chosen: "equal lows at X.XXXX from [date]" or "previous swing high from [date]" — not just "key resistance."
+
+ALWAYS state entry type (IMBALANCE or PROXIMAL LINE), stop rationale, and target liquidity reasoning.
 
 OUTPUT FORMAT — CHOOSE BASED ON GRADE:
 
@@ -127,9 +144,10 @@ Signal: [LONG / SHORT]
 Current Price: [from 1H right-hand scale]
 Entry Zone: [proximal line] - [distal line]
 Zone basis: [which candles form the base and why]
-Stop Loss: [price] ([X] pips risk)
-Target 1: [nearest key level] ([X] pips, [X.X]:1 R:R)
-Target 2: [next key level] ([X] pips, [X.X]:1 R:R)
+Entry trigger: [IMBALANCE at X.XXXX / PROXIMAL LINE at X.XXXX — explain which and why]
+Stop Loss: [price] ([X] pips risk — [X-15 pips] beyond distal line of zone at X.XXXX)
+Target 1: [price] ([X] pips, [X.X]:1 R:R — [why: equal lows from date / swing high from date / unmitigated OB])
+Target 2: [price] ([X] pips, [X.X]:1 R:R — [why: next liquidity pool / equal highs from date])
 R:R Rating: [EXCELLENT (3R+) / GOOD (2-3R) / MARGINAL (1.5-2R) / POOR (below 1.5R — consider skipping)]
 Entry Type: [PULLBACK / BREAKDOWN / BREAKOUT]
 
