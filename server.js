@@ -124,15 +124,21 @@ The stop defines when the thesis is proven wrong. A zone is invalidated only whe
 
 TAKE PROFIT — TARGET LIQUIDITY, NOT ROUND NUMBERS:
 Price is drawn to liquidity pools — clusters of stops sitting above equal highs or below equal lows. These are your targets.
-Scan the chart for:
-1. EQUAL HIGHS/LOWS: two or more swing points at nearly the same level — retail stops cluster here, making it a magnet.
-2. PREVIOUS SWING HIGHS/LOWS: the last significant high before a down move, or last significant low before an up move.
-3. UNMITIGATED ORDER BLOCKS: areas where price left impulsively and has never returned — strong draw on liquidity.
-4. Round numbers and prior session highs/lows as secondary confirmation only — not as primary target.
 
-Target 1: nearest liquidity pool (equal highs/lows or previous swing point)
-Target 2: next significant liquidity pool or unmitigated order block
-Always explain WHY each target is chosen: "equal lows at X.XXXX from [date]" or "previous swing high from [date]" — not just "key resistance."
+PRIORITY ORDER — scan in this exact order:
+1. EQUAL HIGHS (for longs) / EQUAL LOWS (for shorts): two or more swing points at the same price level. ALWAYS prioritize these — retail stops cluster here making it the highest probability magnet.
+2. PREVIOUS SWING HIGH/LOW: the last significant swing point before the move that created the zone you are trading from.
+3. UNMITIGATED ORDER BLOCK: an area price left impulsively and has never returned to fill.
+4. Round numbers only as last resort if no structural level exists nearby.
+
+TARGET FORMAT — MANDATORY. Every target must state the exact price AND when it was formed:
+- Correct: "Equal highs at 1.1200 from Sep 3 and Sep 6 — stops clustered above"
+- Correct: "Previous swing high at 1.1135 from Aug 28 impulse origin"
+- Correct: "Unmitigated supply OB at 1.1180 — origin of Aug 5 drop"
+- Wrong: "daily structure resistance" — always name exact price and date
+- Wrong: "key resistance area" — never vague, always specific
+
+If you cannot identify a specific price level with a clear structural reason, move to the next valid liquidity level.
 
 ALWAYS state entry type (IMBALANCE or PROXIMAL LINE), stop rationale, and target liquidity reasoning.
 
