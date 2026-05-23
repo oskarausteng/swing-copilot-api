@@ -33,6 +33,12 @@ PRICE READING — CRITICAL:
 - For "current price" always use the 1H chart right-hand scale value.
 - Read prices silently. Never narrate your price-reading process.
 
+SCREENSHOT QUALITY — what to expect from good screenshots:
+- White/light background charts are easier to read than dark backgrounds — candle edges are cleaner
+- If indicators (moving averages, volume bars) are covering candles in the zone area, note this and widen your margin of error
+- The zoomed 4H zone screenshot (5th image if provided) should be used as the primary reference for zone precision
+- If the zone area appears compressed or unclear, flag it and use a wider zone boundary rather than guessing
+
 CHART DATE: Never reject or comment on chart dates. Backtesting data is valid. Just analyze what you see.
 
 HISTORICAL MOVES: Do not describe the exact pip range of historical moves — you may misread compressed price labels. Instead describe structure: "price rallied strongly from a major low" not "price rallied from 1.0400 to 1.1139".
@@ -66,10 +72,16 @@ STEP 1 — IDENTIFY THE IMPULSE:
 Find the most recent strong impulsive move (3+ candles in one direction with momentum, minimal wicks against direction).
 
 STEP 2 — FIND THE BASE (THE ZONE):
-The base is the last 1-3 candles BEFORE the impulse that caused the move. These are typically:
-- A small consolidation or single indecision candle
-- The last candle body before price accelerated away
+The base is the LAST 1-3 candles immediately BEFORE price accelerated away impulsively.
+- Look for the single candle (or 2-3 candle consolidation) that sits right at the origin of the impulse
+- This is NOT a general area — it is the specific candle(s) whose bodies define the zone
+- The last candle body before the impulse IS the zone — nothing wider, nothing higher/lower
 - NOT the extreme wick of the move — candle bodies only
+- NOT mid-range consolidation from days earlier — must be the IMMEDIATE base of THIS impulse
+
+CANDLE COUNT RULE: If you cannot name exactly which 1-3 candles form the base, you have not found the zone. Do not proceed — downgrade to C or D.
+
+ZONE WIDTH SANITY CHECK: On a 4H chart, a valid supply/demand zone is typically 15-40 pips wide (the width of 1-3 candle bodies). If your zone is wider than 50 pips, you have identified the wrong area — look for the tighter base closer to the impulse origin.
 
 STEP 3 — DRAW BODY-TO-BODY:
 Zone boundaries are defined by CANDLE BODIES only. Ignore wicks entirely.
@@ -149,7 +161,7 @@ Grade: A
 Signal: [LONG / SHORT]
 Current Price: [from 1H right-hand scale]
 Entry Zone: [proximal line] - [distal line]
-Zone basis: [which candles form the base and why]
+Zone basis: [EXACT candles — e.g. "2 candles on Oct 19-20, bodies ranging 1.0640-1.0665, immediately before the Oct 20 breakdown"]
 Entry trigger: [IMBALANCE at X.XXXX / PROXIMAL LINE at X.XXXX — explain which and why]
 Stop Loss: [price] ([X] pips risk — 15 pips beyond distal line of zone at X.XXXX)
 Target 1: [price] ([X] pips, [X.X]:1 R:R — [why: equal lows/highs, swing point, unmitigated OB])
@@ -170,7 +182,7 @@ Grade: B
 Signal: [LONG / SHORT]
 Current Price: [from 1H right-hand scale]
 Entry Zone: [proximal line] - [distal line]
-Zone basis: [which candles form the base and why]
+Zone basis: [EXACT candles — e.g. "2 candles on Oct 19-20, bodies ranging 1.0640-1.0665, immediately before the Oct 20 breakdown"]
 Entry trigger: [IMBALANCE at X.XXXX / PROXIMAL LINE at X.XXXX — explain which and why]
 Stop Loss: Set on confirmation
 Targets: Set on confirmation
@@ -229,13 +241,17 @@ SESSION_CONTEXT_START
 [compact JSON summary of key levels, bias, and setup for follow-up use]
 SESSION_CONTEXT_END`;
 
-    const imageContent = images.map((b64, i) => {
-      const labels = ['Weekly', 'Daily', '4H', '1H'];
-      return [
-        { type: 'text', text: `${labels[i]} chart:` },
-        { type: 'image', source: { type: 'base64', media_type: 'image/jpeg', data: b64 } }
-      ];
-    }).flat();
+    const labels = ['Weekly', 'Daily', '4H', '1H'];
+    const imageContent = images.map((b64, i) => ([
+      { type: 'text', text: `${labels[i]} chart:` },
+      { type: 'image', source: { type: 'base64', media_type: 'image/jpeg', data: b64 } }
+    ])).flat();
+
+    // Add zoomed zone image if provided
+    if (req.body.zoneImage) {
+      imageContent.push({ type: 'text', text: '4H Zone (zoomed in) — use this as primary reference for supply/demand zone precision:' });
+      imageContent.push({ type: 'image', source: { type: 'base64', media_type: 'image/jpeg', data: req.body.zoneImage } });
+    }
 
     const userMessage = `Instrument: ${instrument}${news ? '\nNews/context: ' + news : ''}${notes ? '\nNotes: ' + notes : ''}
 
