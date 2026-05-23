@@ -434,14 +434,11 @@ Be precise. Use candle body edges only, not wicks. The zone width should match t
         body: JSON.stringify({
           model: 'claude-opus-4-5',
           max_tokens: 400,
-          system: systemPrompt + (sessionContext ? '
-
-Original analysis context:
-' + sessionContext : ''),
+          system: systemPrompt + (sessionContext ? '\n\nOriginal analysis context:\n' + sessionContext : ''),
           messages: [{
             role: 'user',
             content: [
-              { type: 'text', text: `Here is a zoomed screenshot of the ${instr} zone. Please refine the entry zone boundaries.` },
+              { type: 'text', text: 'Here is a zoomed screenshot of the ' + instr + ' zone. Please refine the entry zone boundaries.' },
               { type: 'image', source: { type: 'base64', media_type: 'image/jpeg', data: zoneImage } }
             ]
           }]
