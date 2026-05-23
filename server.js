@@ -409,6 +409,52 @@ SESSION_CONTEXT_END`;
     }
   }
 
+  // ─── ZONE REFINEMENT ──────────────────────────────────────────────────────
+  if (type === 'zone_refine') {
+    const { zoneImage, sessionContext, instrument: instr } = req.body;
+    if (!zoneImage) return res.status(400).json({ error: 'No zone image provided' });
+
+    const systemPrompt = `You are an expert swing trader refining the entry zone of an active setup.
+The user has zoomed into the key supply/demand zone on their 4H chart and sent you a high-resolution screenshot.
+Your job: identify the EXACT zone boundaries using candle bodies only.
+
+RESPOND IN THIS FORMAT (plain text, no markdown):
+Refined Entry Zone: [proximal line] - [distal line]
+Zone basis: [exact candles visible — date, body range]
+Entry trigger: [IMBALANCE at X.XXXX / PROXIMAL LINE at X.XXXX]
+Stop Loss: [price] ([X] pips — 15 pips beyond distal line at X.XXXX)
+Note: [one sentence on what changed from original zone, or "Zone confirmed — original levels stand"]
+
+Be precise. Use candle body edges only, not wicks. The zone width should match the visible base candle(s).`;
+
+    try {
+      const response = await fetch('https://api.anthropic.com/v1/messages', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'x-api-key': ANTHROPIC_API_KEY, 'anthropic-version': '2023-06-01' },
+        body: JSON.stringify({
+          model: 'claude-opus-4-5',
+          max_tokens: 400,
+          system: systemPrompt + (sessionContext ? '
+
+Original analysis context:
+' + sessionContext : ''),
+          messages: [{
+            role: 'user',
+            content: [
+              { type: 'text', text: `Here is a zoomed screenshot of the ${instr} zone. Please refine the entry zone boundaries.` },
+              { type: 'image', source: { type: 'base64', media_type: 'image/jpeg', data: zoneImage } }
+            ]
+          }]
+        })
+      });
+      const data = await response.json();
+      if (data.error) return res.status(500).json({ error: data.error.message });
+      return res.json({ result: data.content[0].text, sessionContext });
+    } catch (err) {
+      return res.status(500).json({ error: err.message });
+    }
+  }
+
   return res.status(400).json({ error: 'Invalid request type' });
 });
 
